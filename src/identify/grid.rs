@@ -104,7 +104,7 @@ impl SkewedGridLocation {
     }
 
     /// Convert into a grid referencing the underlying image as source
-    pub fn into_grid_image<S>(self, img: &PreparedImage<S>) -> RefGridImage<S> {
+    pub fn into_grid_image<'a, S>(self, img: &'a PreparedImage<S>) -> RefGridImage<'a, S> {
         RefGridImage { grid: self, img }
     }
 }

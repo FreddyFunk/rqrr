@@ -226,7 +226,9 @@ where
     /// that are likely QR codes
     ///
     /// Return a vector of Grids
-    pub fn detect_grids(&mut self) -> Vec<crate::Grid<crate::identify::grid::RefGridImage<S>>>
+    pub fn detect_grids<'a>(
+        &'a mut self,
+    ) -> Vec<crate::Grid<crate::identify::grid::RefGridImage<'a, S>>>
     where
         S: Clone,
     {
